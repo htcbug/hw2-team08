@@ -40,6 +40,7 @@ public class AdamQueryExpander extends AbstractQueryExpander {
 					.getFile());
 			loadMap(adamFile);
 		} catch (IOException e) {
+			e.printStackTrace();
 			return false;
 		}
 		return true;

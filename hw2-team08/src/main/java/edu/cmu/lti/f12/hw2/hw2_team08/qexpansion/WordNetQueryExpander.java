@@ -43,6 +43,7 @@ public class WordNetQueryExpander extends AbstractQueryExpander {
 			dict.open();
 			stemmer = new WordnetStemmer(dict);
 		} catch (IOException e) {
+			e.printStackTrace();
 			return false;
 		}
 
