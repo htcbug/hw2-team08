@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -35,10 +36,8 @@ public class AdamQueryExpander extends AbstractQueryExpander {
 		mTermVariantMap = new HashMap<String, List<String>>();
 
 		try {
-			String indexDir = (String) prop.getProperty("parameter");
-			File adamFile = new File(this.getClass().getClassLoader().getResource(indexDir)
-					.getFile());
-			loadMap(adamFile);
+			String adamFile = (String) prop.getProperty("parameter");
+			loadMap(this.getClass().getResourceAsStream(adamFile));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
@@ -46,9 +45,9 @@ public class AdamQueryExpander extends AbstractQueryExpander {
 		return true;
 	}
 
-	private void loadMap(File file) throws FileNotFoundException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				new FileInputStream(file)));
+	private void loadMap(InputStream file) throws FileNotFoundException,
+			IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(file));
 		String line;
 
 		while ((line = br.readLine()) != null) {
