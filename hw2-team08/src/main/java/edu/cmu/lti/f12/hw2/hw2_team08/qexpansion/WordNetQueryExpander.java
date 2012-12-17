@@ -39,11 +39,10 @@ public class WordNetQueryExpander extends AbstractQueryExpander {
 			File dictFile = new File(this.getClass().getResource(dictPath)
 					.getFile());
 
-			dict = new Dictionary(this.getClass().getResource(dictPath));
+			dict = new Dictionary(dictFile);
 			dict.open();
 			stemmer = new WordnetStemmer(dict);
 		} catch (IOException e) {
-			e.printStackTrace();
 			return false;
 		}
 

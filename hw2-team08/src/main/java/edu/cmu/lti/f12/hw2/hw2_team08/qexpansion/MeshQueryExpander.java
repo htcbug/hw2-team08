@@ -46,7 +46,6 @@ public class MeshQueryExpander extends AbstractQueryExpander {
 			this.reader = IndexReader.open(FSDirectory.open(new File(this
 					.getClass().getResource(indexDir).getFile())));
 		} catch (IOException e) {
-			e.printStackTrace();
 			return false;
 		}
 		this.searcher = new IndexSearcher(reader);

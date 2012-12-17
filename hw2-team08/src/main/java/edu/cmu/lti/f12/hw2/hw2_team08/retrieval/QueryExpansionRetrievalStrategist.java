@@ -85,12 +85,12 @@ public class QueryExpansionRetrievalStrategist extends
 			AbstractQueryExpander queryExpander = expanderFactory
 					.getQueryExpander(className);
 			if (queryExpander == null) {
-				throw new ResourceInitializationException();
+				System.out.println("Failed to create" + expander);
 			}
 
 			prop.setProperty("parameter", classPara);
 			if (!queryExpander.init(prop)) {
-				throw new ResourceInitializationException();
+				System.out.println("Failed to initialize " + expander);
 			}
 			this.expanderList.add(queryExpander);
 		}
