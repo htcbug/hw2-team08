@@ -36,7 +36,7 @@ public class AdamQueryExpander extends AbstractQueryExpander {
 
 		try {
 			String indexDir = (String) prop.getProperty("parameter");
-			File adamFile = new File(this.getClass().getResource(indexDir)
+			File adamFile = new File(this.getClass().getClassLoader().getResource(indexDir)
 					.getFile());
 			loadMap(adamFile);
 		} catch (IOException e) {
