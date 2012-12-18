@@ -2,7 +2,6 @@ package edu.cmu.lti.f12.hw2.hw2_team08.qexpansion;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -24,6 +23,7 @@ import edu.mit.jwi.morph.WordnetStemmer;
  * @author <a href="mailto:yuangu@andrew.cmu.edu">Yuan Gu</a>
  */
 
+
 public class WordNetQueryExpander extends AbstractQueryExpander {
 
 	// Use singleton pattern
@@ -34,11 +34,8 @@ public class WordNetQueryExpander extends AbstractQueryExpander {
 	@Override
 	public boolean init(Properties prop) {
 		try {
-
 			String dictPath = (String) prop.getProperty("parameter");
-			File dictFile = new File(this.getClass().getResource(dictPath)
-					.getFile());
-
+			File dictFile = new File(dictPath);
 			dict = new Dictionary(dictFile);
 			dict.open();
 			stemmer = new WordnetStemmer(dict);
