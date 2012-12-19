@@ -4,7 +4,7 @@
 	<groupId>edu.cmu.lti.11791.f12.hw2
 </groupId>
 	<artifactId>hw2-team08</artifactId>
-	<version>0.0.23</version>
+	<version>0.0.24-SNAPSHOT</version>
 	<repositories>
 		<repository>
 			<id>oaqa</id>
