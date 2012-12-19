@@ -23,6 +23,8 @@ import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
+import edu.mit.jwi.Dictionary;
+
 /**
  * 
  * The MeshQueryExpander class uses the See <a
@@ -43,8 +45,7 @@ public class MeshQueryExpander extends AbstractQueryExpander {
 	public boolean init(Properties prop) {
 		try {
 			String indexDir = (String) prop.getProperty("parameter");
-			this.reader = IndexReader.open(FSDirectory.open(new File(this
-					.getClass().getResource(indexDir).getFile())));
+			this.reader = IndexReader.open(FSDirectory.open(new File(indexDir)));
 		} catch (IOException e) {
 			return false;
 		}
@@ -105,7 +106,7 @@ public class MeshQueryExpander extends AbstractQueryExpander {
 			IOException {
 		MeshQueryExpander expander = new MeshQueryExpander();
 		Properties prop = new Properties();
-		prop.setProperty("index", "data/mesh.lucene.index");
+		prop.setProperty("parameter", "/Users/htcbug/mesh.lucene.index");
 		expander.init(prop);
 
 		String query = "head";
