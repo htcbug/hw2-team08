@@ -77,7 +77,7 @@ public class WordNetQueryExpander extends AbstractQueryExpander {
 	public static void main(String[] args) throws IOException {
 		AbstractQueryExpander expander = new WordNetQueryExpander();
 		Properties prop = new Properties();
-		prop.setProperty("dictionary", "data/wordnet-dict");
+		prop.setProperty("parameter", "/Users/htcbug/wordnet-dict");
 		expander.init(prop);
 
 		String query = "affected";

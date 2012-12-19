@@ -2,7 +2,7 @@ class: edu.cmu.lti.f12.hw2.hw2_team08.retrieval.QueryExpansionRetrievalStrategis
 server: http://peace.isri.cs.cmu.edu:9080/solr/genomics-simple/
 port: 9080
 #expanders: ["edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.AdamQueryExpander:/data/adam_database", "edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.WordNetQueryExpander:/data/wordnet-dict", "edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.MeshQueryExpander:/data/mesh.lucene.index"]
-expanders: ["edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.AdamQueryExpander:/data/adam_database", "edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.WordNetQueryExpander:/usr0/ziy/hw2-eval/wordnet"]
+expanders: ["edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.AdamQueryExpander:/data/adam_database", "edu.cmu.lti.f12.hw2.hw2_team08.qexpansion.WordNetQueryExpander:/Users/htcbug/wordnet-dict"]
 expand-factor: 3
 #cross-opts:
     #hit-list-size: ["10", "100", "200", "300"]
